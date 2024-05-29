@@ -16,11 +16,11 @@
 #include <array>
 #include <initializer_list>
 
-#define regnum 14 //regnum can't be more than 14
+#define regnum 14
 
 struct AST;
 
-//必须让逻辑相关的Exp等放到BoolExp后，且这些位于最后，有一处代码比较了int值
+
 enum class NType{
     kint, kvoid, kif, kwhile, kbreak, kcontinue, kreturn, 
     opadd, opmul, oprel, opeq, oplnot,
@@ -46,9 +46,9 @@ struct Var{
     std::string name;
     std::vector<int> shape;
     std::vector<int> value;
-    int offset;
+    int offset; 
     int range;
-    int type; //0:pointer, 1:int, 2:array
+    int type; 
     bool isconst;
     bool isinited;
     int size;
@@ -63,18 +63,16 @@ struct VarList{
 
 struct Func{
     std::vector<std::vector<int>> paramstype;
-    int returntype;//0: void, 1: int
-    int call = 0;//0: no stdcall, 1: stdcall
+    int returntype; //0: void, 1: int
     int offset = 0;
-    int retl = -1;
+    int retl = -1; 
     int range;
-    int maxstack = 0;
 };
 
 struct Reg{
     bool isused = false;
     int nodeid;
-    int time;
+    int time; 
 };
 
 struct RegList{
@@ -113,7 +111,7 @@ struct RangeList{
 struct AST{
     static const std::string debug_names[43];
     std::vector<Node*> nodes;
-    Node* root = nullptr;
+    Node* root = nullptr; 
     int size = 0;
     bool error = false;
     int add_node(NType type);
@@ -132,8 +130,7 @@ struct AST{
     int Rcount = 0;
     Func* curfunc;
     int curstack;
-    std::string start;
-    bool message[16];
+    bool message[16]; 
     void global_compile();
     void func_compile(Node* funcdef);
     void block_compile(Node* blockitems, bool is_func);
@@ -141,12 +138,12 @@ struct AST{
     bool is_const(Node* constexp);
     int cal_const(Node* constexp);
     int set_var(Var &var, Node* node, int depth, int offset);
-    void make_cond(Node* cond, int ltruel, int lfalse, int next);
+    void make_cond(Node* cond, int ltrue, int lfalse, int next); 
     void cal_offset(Node* Lval, bool allow_array);
     std::string get_Lval(Node* node, Node* Lval, bool is_left);
     void free_Lval(Node* Lval);
     void eval_exp(Node* node, bool need_res);
-    std::string get_exp(Node* node, Node* exp, int need_reg); //need_reg: 0:no limit, 1:number or reg 2:reg
+    std::string get_exp(Node* node, Node* exp, int need_reg);
     inline void free_exp(Node* exp); 
     bool part_array(Node* Lval, Func* func, int i);
     void simple_ass(Node* ass, Node* left, Node* right, char oper);
