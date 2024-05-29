@@ -1,7 +1,5 @@
 .section .rdata
-
 .section .data
-
 .section .text
 .globl main
 main:

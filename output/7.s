@@ -5,7 +5,6 @@
     .string "%d\n"
 .LC2:
     .string "%d %d\n"
-
 .section .data
 
 a:
@@ -13,7 +12,6 @@ a:
 
 b:
     .long 1
-
 .section .bss
 .section .text
 .globl inc_a

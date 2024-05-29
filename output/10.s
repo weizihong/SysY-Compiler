@@ -1,9 +1,7 @@
 .section .rdata
 .LC0:
     .string "%d\n"
-
 .section .data
-
 .section .bss
 .section .text
 .globl foo

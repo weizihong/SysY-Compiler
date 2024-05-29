@@ -3,9 +3,7 @@
     .string "%c"
 .LC1:
     .string "%d\n"
-
 .section .data
-
 .section .bss
 .section .text
 .globl get_next
@@ -170,16 +168,30 @@ read_str:
 main:
     pushq   %rbp
     movq    %rsp, %rbp
-    movl    $32768, %eax
+    movl    $32784, %eax
     call    ___chkstk_ms
     subq    %rax, %rsp
     leaq    -16384(%rbp), %rcx
     call    read_str
     leaq    -32768(%rbp), %rcx
     call    read_str
+    movl    $0, -32772(%rbp)
+    movl    $0, -32776(%rbp)
+    jmp     .L24
+.L23:
+    movl    -32772(%rbp), %eax
+    addl    $1, %eax
+    movl    %eax, -32772(%rbp)
     leaq    -16384(%rbp), %rcx
     leaq    -32768(%rbp), %rdx
     call    KMP
+    movl    %eax, -32776(%rbp)
+.L24:
+    movl    -32772(%rbp), %eax
+    cmpl    $1000, %eax
+    jl      .L23
+.L25:
+    movl    -32776(%rbp), %eax
     leaq    .LC1(%rip), %rcx
     movl    %eax, %edx
     subq    $32, %rsp

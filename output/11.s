@@ -1,7 +1,6 @@
 .section .rdata
 .LC0:
     .string "%d\n"
-
 .section .data
 
 a:
@@ -15,7 +14,6 @@ c:
 
 i:
     .long 5
-
 .section .bss
 .section .text
 .globl func

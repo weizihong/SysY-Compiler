@@ -3,9 +3,7 @@
     .string "%d"
 .LC1:
     .string "%d\n"
-
 .section .data
-
 .section .bss
 .section .text
 .globl sort

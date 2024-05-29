@@ -3,9 +3,7 @@
     .string "a<b\n"
 .LC1:
     .string "a>=b\n"
-
 .section .data
-
 .section .bss
 .section .text
 .globl main
