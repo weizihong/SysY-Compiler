@@ -2,7 +2,6 @@
 .LC0:
     .string "Total solutions: %d\n"
 .section .data
-
 count:
     .long 0
 .section .bss
@@ -226,7 +225,7 @@ main:
     pushq   %rbp
     movq    %rsp, %rbp
     subq    $16, %rsp
-    movl    $14, -4(%rbp)
+    movl    $6, -4(%rbp)
     movl    -4(%rbp), %eax
     movl    %eax, %ecx
     call    solveNQ

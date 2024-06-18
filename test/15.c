@@ -18,7 +18,7 @@ void squrae()
 }
 int main()
 {
-    int nmax = 10000000;
+    int nmax = 1000;
     int i = 0;
     while(i < nmax){
         a[0] = 0;
@@ -55,5 +55,6 @@ int main()
         sum = sum % 10000;
         i = i + 1;
     }
+    printf("%d\n", sum);
     return 0;
 }

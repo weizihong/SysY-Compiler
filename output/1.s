@@ -18,14 +18,10 @@ main:
     movl    $7, -8(%rbp)
     movl    $0, -4(%rbp)
     movl    $3, -36(%rbp)
-    movl    $0, -68(%rbp)
-    movl    $0, -64(%rbp)
-    movl    $0, -60(%rbp)
-    movl    $0, -56(%rbp)
-    movl    $0, -52(%rbp)
-    movl    $0, -48(%rbp)
-    movl    $0, -44(%rbp)
-    movl    $0, -40(%rbp)
+    movl    $0, %eax
+    movl    $8, %ecx
+    leaq    -68(%rbp), %rdi
+    rep stosl
     movl    $1, -100(%rbp)
     movl    $2, -96(%rbp)
     movl    $3, -92(%rbp)

@@ -7,10 +7,9 @@
     .string "%d\n"
 .LC3:
     .string "%d\n"
-.section .data
-
 N:
     .long 10000
+.section .data
 .section .bss
 .section .text
 .globl long_array

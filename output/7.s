@@ -6,10 +6,8 @@
 .LC2:
     .string "%d %d\n"
 .section .data
-
 a:
     .long -1
-
 b:
     .long 1
 .section .bss

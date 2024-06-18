@@ -72,7 +72,7 @@ main:
     pushq   %rbp
     movq    %rsp, %rbp
     subq    $32, %rsp
-    movl    $10000000, -4(%rbp)
+    movl    $1000, -4(%rbp)
     movl    $0, -8(%rbp)
     jmp     .L1
 .L0:

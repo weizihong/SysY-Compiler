@@ -61,7 +61,7 @@ void solveNQ(int n) {
 }
 
 int main() {
-    int n = 14;
+    int n = 6;
     solveNQ(n);
     return 0;
 }

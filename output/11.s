@@ -2,16 +2,12 @@
 .LC0:
     .string "%d\n"
 .section .data
-
 a:
     .long 1, 2, 3
-
 b:
     .long 0, 0, 0
-
 c:
     .long 0
-
 i:
     .long 5
 .section .bss

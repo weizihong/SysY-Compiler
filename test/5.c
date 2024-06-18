@@ -65,6 +65,12 @@ int main()
     int dst[4096], src[4096];
     read_str(dst);
     read_str(src);
-    printf("%d\n", KMP(dst, src));
-    return 8;
+    int i = 0;
+    int x = 0;
+    while(i<1000){
+        i = i + 1;
+        x = KMP(dst, src);
+    }
+    printf("%d\n", x);
+    return 0;
 }

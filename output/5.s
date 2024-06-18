@@ -197,6 +197,6 @@ main:
     subq    $32, %rsp
     call    printf
     addq    $32, %rsp
-    movl    $8, %eax
+    movl    $0, %eax
     leave
     ret

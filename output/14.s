@@ -2,7 +2,6 @@
 .LC0:
     .string "%d\n"
 .section .data
-
 count:
     .long 0
 .section .bss
@@ -105,7 +104,7 @@ main:
     pushq   %rbp
     movq    %rsp, %rbp
     subq    $16, %rsp
-    movl    $100000000, -4(%rbp)
+    movl    $100, -4(%rbp)
     movl    -4(%rbp), %eax
     movl    %eax, %ecx
     call    sieveOfEratosthenes
